@@ -1,9 +1,11 @@
 # YouTube Transcript (本地安全版)
 
 **版本**: 1.0.0 (2026-03-23)
-**作者**: qibot (基於 yt-dlp)
+**作者**: Ryan (欧启熙) / qibot
 **許可證**: MIT-0
 **安全狀態**: ✅ 無 VirusTotal 標記（本地執行）
+**GitHub**: https://github.com/miku233333/youtube-transcript-local
+**ClawHub**: 已發布
 
 ---
 
