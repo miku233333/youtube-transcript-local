@@ -1,9 +1,14 @@
+# .gitignore for YouTube Transcript Local
+
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+env/
+venv/
+ENV/
 build/
 develop-eggs/
 dist/
@@ -19,62 +24,43 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-venv/
-env/
-ENV/
 
-# yt-dlp
-*.mp4
-*.mp3
-*.m4a
-*.webm
-*.flv
-*.avi
-*.mkv
-*.wmv
-*.mov
-*.srt
-*.vtt
-*.ass
-*.ssa
-*.info.json
-*.description
-*.thumbnail
-*.annotations.xml
+# Environment
+.env
+.env.local
+.env.*.local
+*.env
 
-# Transcripts
-transcripts/
-*.transcript
-*.summary.md
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 
 # OS
 .DS_Store
 Thumbs.db
-desktop.ini
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
 
 # Logs
 *.log
 logs/
 
-# Config (keep template, ignore actual config)
-config.yaml
-!config.example.yaml
-
-# Secrets
-.env
-.secrets/
-*.key
-*.pem
-
-# Test
-.pytest_cache/
-.coverage
+# Test coverage
 htmlcov/
-.tox/
+.coverage
+.coverage.*
+.coverage.*.*
+coverage.xml
+*.cover
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Subtitles output
+subtitles/
+*.srt
+*.vtt
+*.txt

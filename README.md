@@ -324,7 +324,7 @@ ruff check --fix .
 ## 📬 聯絡
 
 - **GitHub**: [@miku233333](https://github.com/miku233333)
-- **Email**: miku2339@foxmail.com
+- **Email**: [通過 GitHub 聯絡](https://github.com/miku233333/youtube-transcript-local/issues)
 
 ---
 
