@@ -235,8 +235,8 @@ pip install -r requirements-dev.txt
 
 ## 📬 聯繫
 
-- **作者**: qibot
-- **Email**: USER_HANDLE@contact.com
+- **作者**: qibot OU / qibot
+- **Email**: USER_NAME@contact.com
 - **Issues**: [GitHub Issues](https://contact.com/YOUR_USERNAME/youtube-transcript-local/issues)
 
 ---
