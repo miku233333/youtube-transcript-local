@@ -235,8 +235,8 @@ pip install -r requirements-dev.txt
 
 ## 📬 聯繫
 
-- **作者**: Ryan (欧启熙) / qibot
-- **Email**: miku2339@foxmail.com
+- **作者**: Ryan OU / qibot
+- **Email**: ouqixi@qimake.com
 - **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/youtube-transcript-local/issues)
 
 ---
