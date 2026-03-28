@@ -1,18 +1,33 @@
-MIT-0 License
+YouTube Transcript Local License
 
-Copyright (c) 2026 Ryan (欧启熙) / qibot
+Copyright (c) 2026 Ryan (@miku233333)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so.
+of this software and associated documentation files (the "Software"), to use,
+modify, and distribute the Software for non-commercial purposes only,
+subject to the following conditions:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. NON-COMMERCIAL USE ONLY
+   - Personal use is permitted
+   - Educational use is permitted
+   - Non-profit organization use is permitted
+   - Modification and distribution for non-commercial purposes is permitted
+
+2. PROHIBITED USES
+   - Commercial use is strictly prohibited (including but not limited to:
+     selling, leasing, charging for services)
+   - Integration into commercial products is prohibited
+   - Enterprise internal commercial deployment is prohibited
+
+3. REQUIREMENTS
+   - The above copyright notice and this permission notice shall be included
+     in all copies or substantial portions of the Software.
+   - Any distribution must use the same license.
+   - Modifications must be documented.
+
+4. DISCLAIMER
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+For commercial licensing inquiries, please contact the author.
