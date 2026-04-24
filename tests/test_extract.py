@@ -208,7 +208,7 @@ class TestURLValidation:
     
     def test_standard_url(self, extractor):
         """測試標準 YouTube URL"""
-        video_id = extractor._validate_url("https://contact.com/watch?v=dQw4w9WgXcQ")
+        video_id = extractor._validate_url("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
         assert video_id == "dQw4w9WgXcQ"
     
     def test_short_url(self, extractor):
@@ -218,19 +218,19 @@ class TestURLValidation:
     
     def test_embed_url(self, extractor):
         """測試嵌入連結"""
-        video_id = extractor._validate_url("https://contact.com/embed/dQw4w9WgXcQ")
+        video_id = extractor._validate_url("https://www.youtube.com/embed/dQw4w9WgXcQ")
         assert video_id == "dQw4w9WgXcQ"
     
     def test_invalid_url(self, extractor):
         """測試無效 URL"""
         with pytest.raises(URLValidationError) as exc_info:
-            extractor._validate_url("https://contact.com")
+            extractor._validate_url("https://example.invalid")
         assert exc_info.value.error_code == "URL_VALIDATION_FAILED"
     
     def test_url_with_extra_params(self, extractor):
         """測試帶參數的 URL"""
         video_id = extractor._validate_url(
-            "https://contact.com/watch?v=dQw4w9WgXcQ&feature=share&t=10"
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=share&t=10"
         )
         assert video_id == "dQw4w9WgXcQ"
 
@@ -304,7 +304,7 @@ class TestExtractMethod:
         mock_extract_sub.return_value = subtitle_file
         
         # 執行測試
-        result = extractor.extract("https://contact.com/watch?v=test", "zh-Hans")
+        result = extractor.extract("https://www.youtube.com/watch?v=test", "zh-Hans")
         
         # 驗證結果
         assert result['success'] is True
@@ -332,7 +332,7 @@ class TestExtractMethod:
         mock_validate.return_value = "test_id"
         mock_get_info.side_effect = NetworkError("Connection failed")
         
-        result = extractor.extract("https://contact.com/watch?v=test")
+        result = extractor.extract("https://www.youtube.com/watch?v=test")
         
         assert result['success'] is False
         assert result['error']['error_code'] == "NETWORK_ERROR"
@@ -352,7 +352,7 @@ class TestExtractMethod:
         mock_get_info.return_value = {'title': 'Test Video'}
         mock_extract_sub.return_value = None
         
-        result = extractor.extract("https://contact.com/watch?v=test")
+        result = extractor.extract("https://www.youtube.com/watch?v=test")
         
         assert result['success'] is False
         assert result['error']['error_code'] == "SUBTITLE_NOT_FOUND"
@@ -381,7 +381,7 @@ class TestExtractMethod:
         subtitle_file.write_text("Cached subtitle")
         mock_extract_sub.return_value = subtitle_file
         
-        result = extractor.extract("https://contact.com/watch?v=cached")
+        result = extractor.extract("https://www.youtube.com/watch?v=cached")
         
         # 驗證使用了緩存（沒有調用 _get_video_info）
         mock_get_info.assert_not_called()
@@ -500,7 +500,7 @@ class TestIntegration:
                 subtitle_file.write_text("Test content")
                 
                 with patch.object(extractor, '_extract_subtitles', return_value=subtitle_file):
-                    result = extractor.extract("https://contact.com/watch?v=test123")
+                    result = extractor.extract("https://www.youtube.com/watch?v=test123")
                     
                     assert result['success'] is True
                     assert result['video_id'] == 'test123'
@@ -528,7 +528,7 @@ class TestGetVideoInfo:
             stdout='{"title": "Test Video", "id": "test123"}'
         )
         
-        info = extractor._get_video_info("https://contact.com/watch?v=test123")
+        info = extractor._get_video_info("https://www.youtube.com/watch?v=test123")
         
         assert info['title'] == 'Test Video'
         assert info['id'] == 'test123'
@@ -542,7 +542,7 @@ class TestGetVideoInfo:
         )
         
         with pytest.raises(YTDLLError) as exc_info:
-            extractor._get_video_info("https://contact.com/watch?v=test123")
+            extractor._get_video_info("https://www.youtube.com/watch?v=test123")
         
         assert exc_info.value.error_code == "YT_DLP_ERROR"
     
@@ -553,7 +553,7 @@ class TestGetVideoInfo:
         mock_run.side_effect = sp.TimeoutExpired(cmd='test', timeout=30)
         
         with pytest.raises(NetworkError) as exc_info:
-            extractor._get_video_info("https://contact.com/watch?v=test123")
+            extractor._get_video_info("https://www.youtube.com/watch?v=test123")
         
         assert exc_info.value.error_code == "NETWORK_ERROR"
     
@@ -566,7 +566,7 @@ class TestGetVideoInfo:
         )
         
         with pytest.raises(YTDLLError) as exc_info:
-            extractor._get_video_info("https://contact.com/watch?v=test123")
+            extractor._get_video_info("https://www.youtube.com/watch?v=test123")
         
         assert "JSON 解析失敗" in str(exc_info.value.message)
 
@@ -593,7 +593,7 @@ class TestExtractSubtitles:
         subtitle_file.parent.mkdir(parents=True, exist_ok=True)
         subtitle_file.write_text("Test subtitle")
         
-        result = extractor._extract_subtitles("https://contact.com/watch?v=test123", "test123", "zh-Hans")
+        result = extractor._extract_subtitles("https://www.youtube.com/watch?v=test123", "test123", "zh-Hans")
         
         assert result == subtitle_file
     
@@ -607,7 +607,7 @@ class TestExtractSubtitles:
         subtitle_file.parent.mkdir(parents=True, exist_ok=True)
         subtitle_file.write_text("WEBVTT")
         
-        result = extractor._extract_subtitles("https://contact.com/watch?v=test123", "test123", "en")
+        result = extractor._extract_subtitles("https://www.youtube.com/watch?v=test123", "test123", "en")
         
         assert result == subtitle_file
     
@@ -616,7 +616,7 @@ class TestExtractSubtitles:
         """測試未找到字幕"""
         mock_run.return_value = MagicMock(returncode=0, stderr='')
         
-        result = extractor._extract_subtitles("https://contact.com/watch?v=test123", "test123", "zh-Hans")
+        result = extractor._extract_subtitles("https://www.youtube.com/watch?v=test123", "test123", "zh-Hans")
         
         assert result is None
     
@@ -625,7 +625,7 @@ class TestExtractSubtitles:
         """測試啟用自動生成字幕"""
         mock_run.return_value = MagicMock(returncode=0, stderr='')
         
-        extractor._extract_subtitles("https://contact.com/watch?v=test123", "test123", "en", auto_generate=True)
+        extractor._extract_subtitles("https://www.youtube.com/watch?v=test123", "test123", "en", auto_generate=True)
         
         # 驗證命令包含 --write-auto-sub
         call_args = mock_run.call_args[0][0]

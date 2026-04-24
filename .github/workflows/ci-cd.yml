@@ -155,7 +155,7 @@ jobs:
     
     environment:
       name: production
-      url: https://contact.com/miku233333/youtube-transcript-local/releases
+      url: https://github.com/miku233333/youtube-transcript-local/releases
     
     steps:
     - name: Checkout code

@@ -22,10 +22,10 @@ pip install -r requirements.txt
 
 ```bash
 # 提取字幕（默認中文）
-python extract.py -u https://contact.com/watch?v=VIDEO_ID
+python extract.py -u https://www.youtube.com/watch?v=VIDEO_ID
 
 # 示例（Rick Astley - Never Gonna Give You Up）
-python extract.py -u https://contact.com/watch?v=dQw4w9WgXcQ
+python extract.py -u https://www.youtube.com/watch?v=dQw4w9WgXcQ
 ```
 
 ### 3. 常用命令
@@ -79,7 +79,7 @@ python extract.py --help
 
 ```
 2026-03-28 20:00:00 | INFO | YouTube Transcript Extractor v2.0.0 (P0 Upgrade)
-2026-03-28 20:00:01 | INFO | 開始提取：https://contact.com/watch?v=dQw4w9WgXcQ
+2026-03-28 20:00:01 | INFO | 開始提取：https://www.youtube.com/watch?v=dQw4w9WgXcQ
 2026-03-28 20:00:02 | INFO | 獲取成功：Rick Astley - Never Gonna Give You Up
 2026-03-28 20:00:05 | INFO | 提取成功：/path/to/transcripts/dQw4w9WgXcQ.zh-Hans.srt
 
@@ -128,7 +128,7 @@ sudo apt install yt-dlp
 ### Q2: 提示 "無效的 YouTube 連結"
 
 **解決方法**:
-- 確保連結格式正確：`https://contact.com/watch?v=VIDEO_ID`
+- 確保連結格式正確：`https://www.youtube.com/watch?v=VIDEO_ID`
 - 或直接使用 VIDEO_ID：`python extract.py -u dQw4w9WgXcQ`
 
 ### Q3: 提示 "未找到字幕"
@@ -163,7 +163,7 @@ extractor = YouTubeTranscriptExtractor(
 
 # 提取字幕
 result = extractor.extract(
-    url='https://contact.com/watch?v=VIDEO_ID',
+    url='https://www.youtube.com/watch?v=VIDEO_ID',
     lang='zh-Hans',
     auto_generate=True
 )
@@ -182,7 +182,7 @@ else:
 video_ids = ['video1', 'video2', 'video3']
 
 for video_id in video_ids:
-    result = extractor.extract(f'https://contact.com/watch?v={video_id}')
+    result = extractor.extract(f'https://www.youtube.com/watch?v={video_id}')
     if result['success']:
         print(f"✅ {video_id}: {result['title']}")
     else:
@@ -206,7 +206,7 @@ for video_id in video_ids:
 ## 🆘 獲取幫助
 
 - 查看文檔：`README.md`
-- 提交 Issue：https://contact.com/miku233333/youtube-transcript-local/issues
+- 提交 Issue：https://github.com/miku233333/youtube-transcript-local/issues
 - 查看日誌：`--log-file` 選項保存詳細日誌
 
 ---
