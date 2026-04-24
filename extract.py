@@ -6,7 +6,7 @@ Extract subtitles from YouTube videos using yt-dlp
 
 Author: qibot
 License: MIT-0
-GitHub: https://contact.com/miku233333/youtube-transcript-local
+GitHub: https://github.com/miku233333/youtube-transcript-local
 Version: 2.0.0 (P0 Upgrade - Error Handling + Logging + Tests)
 """
 
@@ -192,7 +192,7 @@ ERROR_MESSAGES = {
     "URL_VALIDATION_FAILED": {
         "user": "❌ 無效的 YouTube 連結，請檢查是否正確",
         "tech": "URL 格式驗證失敗",
-        "suggestion": "請確保連結格式為：https://contact.com/watch?v=VIDEO_ID",
+        "suggestion": "請確保連結格式為：https://www.youtube.com/watch?v=VIDEO_ID",
     },
     "NETWORK_ERROR": {
         "user": "🌐 網絡連接問題，請檢查網絡後重試",
@@ -354,7 +354,7 @@ class YouTubeTranscriptExtractor:
         import re
 
         patterns = [
-            r"v=([a-zA-Z0-9_-]{11})",  # Standard: contact.com/watch?v=VIDEO_ID
+            r"v=([a-zA-Z0-9_-]{11})",  # Standard: youtube.com/watch?v=VIDEO_ID
             r"youtu\.be/([a-zA-Z0-9_-]{11})",  # Short: youtu.be/VIDEO_ID
             r"youtube\.com/embed/([a-zA-Z0-9_-]{11})",  # Embed
             r"youtube\.com/v/([a-zA-Z0-9_-]{11})",  # Old format
@@ -602,7 +602,7 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 示例:
-  %(prog)s -u https://contact.com/watch?v=VIDEO_ID
+  %(prog)s -u https://www.youtube.com/watch?v=VIDEO_ID
   %(prog)s -u VIDEO_ID -l zh-Hans --verbose
   %(prog)s -u VIDEO_ID -o ./output --log-file ./logs/extract.log
         """,

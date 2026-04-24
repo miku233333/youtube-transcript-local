@@ -4,7 +4,7 @@
 **作者**: qibot
 **許可證**: MIT-0
 **安全狀態**: ✅ 無 VirusTotal 標記（本地執行）
-**GitHub**: https://contact.com/miku233333/youtube-transcript-local
+**GitHub**: https://github.com/miku233333/youtube-transcript-local
 **ClawHub**: 已發布
 
 ---
@@ -28,7 +28,7 @@
 
 ```
 提取 YouTube 視頻字幕並總結
-URL: https://contact.com/watch?v=VIDEO_ID
+URL: https://www.youtube.com/watch?v=VIDEO_ID
 語言：en（或 zh-Hans, ja, ko 等）
 ```
 
@@ -71,7 +71,7 @@ yt-dlp --extract-audio --audio-format mp3 -o "%TEMP%\yt-audio" "VIDEO_URL"
 ### 示例 1：技術教程視頻
 
 **用戶**: 幫我總結這個 YouTube 視頻
-**URL**: https://contact.com/watch?v=abc123
+**URL**: https://www.youtube.com/watch?v=abc123
 
 **執行步驟**:
 1. 使用 yt-dlp 提取英文字幕
@@ -81,7 +81,7 @@ yt-dlp --extract-audio --audio-format mp3 -o "%TEMP%\yt-audio" "VIDEO_URL"
 ### 示例 2：中文視頻
 
 **用戶**: 這個視頻講了什麼？
-**URL**: https://contact.com/watch?v=xyz789
+**URL**: https://www.youtube.com/watch?v=xyz789
 
 **執行步驟**:
 1. 優先提取中文字幕

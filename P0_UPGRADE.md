@@ -64,7 +64,7 @@ ERROR_MESSAGES = {
     "URL_VALIDATION_FAILED": {
         "user": "❌ 無效的 YouTube 連結，請檢查是否正確",
         "tech": "URL 格式驗證失敗",
-        "suggestion": "請確保連結格式為：https://contact.com/watch?v=VIDEO_ID"
+        "suggestion": "請確保連結格式為：https://www.youtube.com/watch?v=VIDEO_ID"
     },
     # ... 其他錯誤類型
 }
@@ -205,7 +205,7 @@ safety>=2.0.0
 
 ```bash
 # 提取字幕
-python extract.py -u https://contact.com/watch?v=VIDEO_ID
+python extract.py -u https://www.youtube.com/watch?v=VIDEO_ID
 
 # 詳細日誌
 python extract.py -u VIDEO_ID --verbose --log-file ./logs/extract.log
@@ -315,8 +315,8 @@ start htmlcov\index.html  # Windows
 如有問題或建議，請聯繫：
 
 - **作者**: qibot
-- **GitHub**: https://contact.com/miku233333/youtube-transcript-local
-- **Issue**: https://contact.com/miku233333/youtube-transcript-local/issues
+- **GitHub**: https://github.com/miku233333/youtube-transcript-local
+- **Issue**: https://github.com/miku233333/youtube-transcript-local/issues
 
 ---
 

@@ -13,7 +13,7 @@
 
 ### 1. 創建 GitHub 倉庫
 
-訪問：https://contact.com/new
+訪問：https://github.com/new
 
 **填寫信息**:
 - **Repository name**: `youtube-transcript-local`
@@ -44,7 +44,7 @@ safe-ai
 cd C:\Users\qibot\.openclaw\workspace\skills\youtube-transcript-local
 
 # 添加遠程倉庫（替換 YOUR_USERNAME 為你的 GitHub 用戶名）
-git remote add origin https://contact.com/YOUR_USERNAME/youtube-transcript-local.git
+git remote add origin https://github.com/YOUR_USERNAME/youtube-transcript-local.git
 
 # 推送代碼
 git branch -M main
@@ -83,7 +83,7 @@ git push -u origin main
 
    ### 🚀 使用
    ```bash
-   python extract.py -u "https://contact.com/watch?v=VIDEO_ID"
+   python extract.py -u "https://www.youtube.com/watch?v=VIDEO_ID"
    ```
 
    ### 📄 文檔
@@ -144,7 +144,7 @@ youtube-transcript-local - 本地安全的 YouTube 字幕提取工具
 ✅ 多語言支持
 ✅ OpenClaw 集成
 
-GitHub: https://contact.com/YOUR_USERNAME/youtube-transcript-local
+GitHub: https://github.com/YOUR_USERNAME/youtube-transcript-local
 
 #OpenSource #YouTube #AI #OpenClaw
 ```
